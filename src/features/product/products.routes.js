@@ -11,6 +11,7 @@ const router = express.Router();
 const productController = new ProductController();
 
 // 4. Define routes
+// localhost:3000/api/products
 router.get('/', productController.getAllProducts);
 router.post('/', productController.addProduct);
 
