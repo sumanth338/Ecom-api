@@ -3,6 +3,7 @@
 // 1. Import express
 import express from 'express';
 import ProductController from './product.controller.js';
+import {upload } from '../../middleware/fileupload.middleware.js';
 
 // 2. Intialize Express Router
 const router = express.Router();
@@ -13,7 +14,7 @@ const productController = new ProductController();
 // 4. Define routes
 // localhost:3000/api/products
 router.get('/', productController.getAllProducts);
-router.post('/', productController.addProduct);
+router.post('/', upload.single('imageUrl'), productController.addProduct);
 
 
 export default router;

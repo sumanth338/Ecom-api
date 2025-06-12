@@ -11,6 +11,11 @@ export default class Product {
     static getAll(){
         return products;
     }
+    static add(product){
+      product.id  = products.length + 1;
+      products.push(product);
+      return product;
+    }
 }
 
 var products = [
