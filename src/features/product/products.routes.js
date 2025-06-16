@@ -15,6 +15,7 @@ const productController = new ProductController();
 // localhost:3000/api/products
 router.get('/', productController.getAllProducts);
 router.post('/', upload.single('imageUrl'), productController.addProduct);
+router.get('/:id', productController.getOneProduct)
 
 
 export default router;
