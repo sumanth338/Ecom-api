@@ -17,5 +17,7 @@ router.get('/', productController.getAllProducts);
 router.post('/', upload.single('imageUrl'), productController.addProduct);
 router.get('/:id', productController.getOneProduct)
 
+router.get('/filter', productController.filterProducts);
+
 
 export default router;
