@@ -13,9 +13,9 @@ export class userModel {
         return newUser;
     }
 
-    static Signin(email, password){
-        const user = user.find(userItem => userItem.email === email && userItem.password === password)
-        return user;
+  static Signin(email, password){
+        const result = user.find(userItem => userItem.email === email && userItem.password === password)
+        return result;
     }
 }
 
