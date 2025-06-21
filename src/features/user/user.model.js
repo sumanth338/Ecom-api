@@ -1,3 +1,4 @@
+
 export class userModel {
     constructor(name, email, password, type, id){
         this.name = name;
@@ -13,12 +14,13 @@ export class userModel {
         return newUser;
     }
 
-  static Signin(email, password){
+
+    static Signin(email, password){
+
         const result = user.find(userItem => userItem.email === email && userItem.password === password)
         return result;
     }
 }
-
 var user =[
     {
         id: 1,
