@@ -11,7 +11,7 @@ export default class ProductController {
         name, 
         price:parseFloat(price),
         sizes:sizes.split(','),
-        imageUrl:req.file.filename
+        imageUrl: req.file ? req.file.filename : null
       }
       const createRecord =Product.add(newProduct);
       res.status(200).send(createRecord);

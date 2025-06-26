@@ -7,7 +7,7 @@ export class userModel {
         this.type = type;
         this.id = id;
     }
-    static Signup(name, email, password, type){
+    static signup(name, email, password, type){
         const newUser = new userModel(name, email, password, type)
         newUser.id = user.length +1
         user.push(newUser)
@@ -15,13 +15,17 @@ export class userModel {
     }
 
 
-    static Signin(email, password){
+    static signin(email, password){
 
         const result = user.find(userItem => userItem.email === email && userItem.password === password)
         return result;
     }
+
+    static getAll(){
+        return user;
+    }
 }
-var user =[
+let user =[
     {
         id: 1,
         name: "Seller user",
